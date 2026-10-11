@@ -4,8 +4,9 @@ metadata:
  name: rabbitmq-ingress 
  namespace: micro 
  annotations: 
- nginx.ingress.kubernetes.io/use-regex: "true" 
+ argocd.argoproj.io/tracking-id: rabbitmq:networking.k8s.io/Ingress:micro/rabbitmq-ingress 
  nginx.ingress.kubernetes.io/rewrite-target: /$2 
+ nginx.ingress.kubernetes.io/use-regex: "true" 
 spec: 
  ingressClassName: nginx 
  rules: 
