@@ -4,4 +4,4 @@ metadata:
   name: rabbitmq-configmap
 data:
   rabbitmq.conf: |
-    management.path_prefix: /rabbitmq
+    management.path_prefix = /rabbitmq
