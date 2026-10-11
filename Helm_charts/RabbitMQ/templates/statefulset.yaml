@@ -30,7 +30,17 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/rabbitmq
               name: rabbitmq-volume
+            - name: rabbitmq.config
+              mountPath: /etc/rabbitmq/rabbitmq.conf
+              subPath: rabbitmq.conf
+              readOnly: true
       volumes:
         - name: rabbitmq-volume
           persistentVolumeClaim:
             claimName: rabbitmq-pvc
+        - name: rabbitmq.config
+          configMap:
+            name: rabbitmq-configmap
+            items:
+              - key: rabbitmq.conf
+                path: rabbitmq.conf
