@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: rabbitmq-configmap
 data:
-  PLACEHOLDER: "NONE"
+  rabbitmq.conf: |
+    management.path_prefix: /rabbitmq
